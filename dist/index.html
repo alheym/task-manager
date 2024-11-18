@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Manager</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    .task {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Task Manager</h1>
+
+  <!-- Форма для добавления задач -->
+  <form id="task-form">
+    <label>
+      Заголовок:
+      <input type="text" id="title" required />
+    </label>
+    <label>
+      Описание:
+      <input type="text" id="description" />
+    </label>
+    <label>
+      Тип задачи:
+      <select id="type">
+        <option value="general">Общая</option>
+        <option value="deadline">С дедлайном</option>
+        <option value="assigned">С ответственным</option>
+        <option value="location">С местом проведения</option>
+      </select>
+    </label>
+    <label id="extra-field"></label>
+    <button type="submit">Добавить задачу</button>
+  </form>
+
+  <!-- Список задач -->
+  <div>
+    <h2>Список задач</h2>
+    <div id="tasks"></div>
+  </div>
+
+  <!-- Фильтрация -->
+  <div>
+    <h2>Фильтры</h2>
+    <label>
+      Статус:
+      <select id="status-filter">
+        <option value="all">Все</option>
+        <option value="pending">Не выполнено</option>
+        <option value="completed">Выполнено</option>
+      </select>
+    </label>
+    <label>
+      Тип задачи:
+      <select id="type-filter">
+        <option value="all">Все</option>
+        <option value="general">Общая</option>
+        <option value="deadline">С дедлайном</option>
+        <option value="assigned">С ответственным</option>
+        <option value="location">С местом проведения</option>
+      </select>
+    </label>
+  </div>
+
+  <script src="./app.js" type="module"></script>
+</body>
+</html>
